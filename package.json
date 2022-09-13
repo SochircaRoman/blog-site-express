@@ -4,8 +4,7 @@
   "description": "This is the backend and frontend part of a blog site written in Express.js a framework of Node.js and VueJS using for frontend",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon src/app.js"
   },
   "repository": {
     "type": "git",
