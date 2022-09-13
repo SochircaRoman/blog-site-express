@@ -1,0 +1,23 @@
+{
+  "name": "blog-site-express",
+  "version": "1.0.0",
+  "description": "This is the backend and frontend part of a blog site written in Express.js a framework of Node.js and VueJS using for frontend",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SochircaRoman/blog-site-express.git"
+  },
+  "author": "Sochirca Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SochircaRoman/blog-site-express/issues"
+  },
+  "homepage": "https://github.com/SochircaRoman/blog-site-express#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
