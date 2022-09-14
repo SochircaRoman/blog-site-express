@@ -2,14 +2,20 @@ const express = require('express')
 require('dotenv').config()
 
 const app = express()
-const port = 3000
+const router = require("./api/routes/index");
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app.use(express.json())
+app.use('/', router);
 
-app.listen(process.env.SERVER_PORT, process.env.SERVER_URL, () => {
-  console.log(`Example app listening on port ${process.env.SERVER_PORT}`)
-})
+const startApp = async () => {
+  try {
+    app.listen(process.env.SERVER_PORT, process.env.SERVER_URL, () => {
+      console.log(`Server started on port http://localhost:${process.env.SERVER_PORT}`)
+    })
+  } catch (error) {
+    console.log(error)
+  }
+}
 
+startApp()
 require('./database').init()
