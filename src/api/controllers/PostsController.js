@@ -3,7 +3,13 @@ const PostsService = require('../services/PostsService')
 class PostsController {
   async getAll(request, response) {
     try {
-        return await response.status(200).json(await PostsService.getAll)
+        return await response.status(200).json(await PostsService.getAll[
+          'id',
+          'title',
+          'description',
+          'author',
+          'picture'
+        ])
     } catch (error) {
         return await response.status(500).json(JSON.stringify(error))
     }

@@ -5,20 +5,24 @@ module.exports = (mongoose, DataTypes) => {
   Post.init(
     {
       id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         primaryKey: true,
         autoIncrement: true
       },
       title: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(150),
         required: true
       },
-      content: {
-        type: DataTypes.STRING,
+      description: {
+        type: DataTypes.STRING(5000),
+        required: true
+      },
+      author: {
+        type: DataTypes.STRING(50),
         required: true
       },
       picture: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(60),
         required: true
       }
     },

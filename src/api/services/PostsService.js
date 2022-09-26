@@ -1,8 +1,8 @@
 const PostsRepository = require('../../database/repositories/PostsRepository')
 
 class PostsService {
-  async getAll() {
-      return await PostsRepository.getAll()
+  async getAll(fields = undefined) {
+      return await PostsRepository.getAll(fields)
   }
 }
 

@@ -1,8 +1,8 @@
 const Post = require('../models/Post')
 
 class PostsRepository {
-  async getAll() {
-      return await Post.findAll()
+  async getAll(fields = undefined) {
+      return await Post.findAll({attributes: fields})
   }
 }
 
