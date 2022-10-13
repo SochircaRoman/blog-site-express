@@ -67,13 +67,13 @@ class UsersController{
       }
   }
 
-  async getPosts(request, response){
+  async getUserPosts(request, response){
       try{
           const user = await UsersService.getUser(request.params.id)
           if (!user) {
             return response.status(404).json({ error: "No user found with that id" })
           }
-          return response.status(200).json(await UsersService.getPosts(
+          return response.status(200).json(await UsersService.getUserPosts(
               request.params.id, 
               ['id', 'title', 'description', 'author', 'image', 'date']
           ))

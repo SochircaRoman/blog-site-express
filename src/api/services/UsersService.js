@@ -22,8 +22,8 @@ class UsersService {
         return await UsersRepository.deleteUser(id)
     }
 
-    async getPosts(id, fields) {
-        return await PostsRepository.getAllOfUser(userId, fields);
+    async getUserPosts(id, fields) {
+        return await PostsRepository.getUserPosts(id, fields);
     }
 }
 
