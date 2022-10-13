@@ -33,6 +33,10 @@ class UsersController{
           if (!username && !password && !email) {
               return response.status(404).json({message: "Nothing to update"});
           }
+          const user = await UsersService.getUser(request.params.id)
+          if(!user){
+              return response.status(404).json({ error: "No user found with that id" })
+          }
           return response.status(200).json(await UsersService.updateUser(request.params.id, request.body));
       } catch(error){
           return response.status(500).json(JSON.stringify(error))
